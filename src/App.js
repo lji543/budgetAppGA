@@ -5,14 +5,14 @@ import './App.css';
 import { connect } from 'react-redux';
 
 import Expenses from './components/Expenses';
-import Profile from './components/Profile';
+// import Profile from './components/Profile';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
 
-        APP
+        <Expenses />
       </div>
     );
   }

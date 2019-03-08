@@ -29,39 +29,37 @@ class Expenses extends Component {
           type: "Cable/Internet",
           amount: 0
         }
-        // {
-        //   rent: 0
-        // },
-        // {
-        //   utilities: 0
-        // },
-        // {
-        //   entertainment: 0
-        // },
-        // {
-        //   groceries: 0
-        // },
-        // {
-        //   cable: 0
-        // },
-      ]
+      ],
+      message: '',
+      // newExpense: {
+      //   name: '',
+      //   amount: 0
+      // }
     }
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('submit ',e)
+    let name = document.getElementById("newexpensename").value;
+    let amount = document.getElementById("newexpenseamount").value;
+    let expenses = [...this.state.expenses];
 
-    // const { value, name }
+    if (name && amount) {
+      expenses.push({type:name,amount:amount});
+      this.setState({
+        expenses:expenses,
+        message:'',
+        // newExpense: {name:'',amount:0}
+      });
+    } else {
+      this.setState({message:"Please enter a name and amount"});
+    }
 
-    // if (e.target.value)
   }
 
   handleChange = e => {
     // e.preventDefault();
     let expenses = [...this.state.expenses];
-    // [[e.target.name]:e.target.value]
-    // console.log(expenses)
     expenses.map(exp => {
       if (exp.type===e.target.name) {
         return exp.amount = e.target.value;
@@ -71,12 +69,14 @@ class Expenses extends Component {
     this.setState({expenses:expenses});
   }
 
+  handleNewExpChange = e => {
+    //
+  }
+
   render() {
     console.log(this.state.expenses)
     return (
-      <div className="container-expenses">
-
-
+      <div className="">
         {this.state.expenses.map((exp,idx) => {
           return (
             <div key={idx}>
@@ -90,12 +90,15 @@ class Expenses extends Component {
           )
         })}
 
-        <form onSubmit={this.handleSubmit}>
-          <input
+        <form onSubmit={this.handleSubmit} >
+          <input id="newexpensename"
             placeholder="Name"
+            name="name"
+
           />
-          <input
-            placeholder="Amt"
+          <input id="newexpenseamount"
+            placeholder="Amount"
+            name="amount"
           />
           <input type="submit"
             value="Add New Expense"
@@ -108,13 +111,8 @@ class Expenses extends Component {
 
 function mapStateToProps(state, props) {
   return {
-    // the cart (in state.cart) comes from the rootReducer
     expenses: state.expenses
   }
 }
 
 export default connect(mapStateToProps, expensesActions)(Expenses);
-
-// name={exp.type}
-// value={exp.amount}
-// onChange={e => this.handleChange(e)}

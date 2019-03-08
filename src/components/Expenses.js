@@ -55,6 +55,7 @@ class Expenses extends Component {
   // componentDid
 
   render() {
+    // console.log(this.props)
     return (
       <div className="">
         {this.state.expenses.map((exp,idx) => {
@@ -64,13 +65,13 @@ class Expenses extends Component {
               <input
                 name={exp.type}
                 value={exp.amount}
-                onChange={e => this.handleChange(e)}
+                onChange={e => this.props.handleChange(e)}
               />
             </div>
           )
         })}
 
-        <form onSubmit={this.handleSubmit} >
+        <form onSubmit={this.props.handleSubmit} >
           <input id="newexpensename"
             placeholder="Name"
             name="name"

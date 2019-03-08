@@ -16,7 +16,7 @@ class Home extends Component {
           {this.props.expenses.map((exp,idx) => {
             return (
               <div key={idx}>
-               {exp.type} {exp.amount}
+               {exp.type}&nbsp;&nbsp;{exp.amount}
               </div>
             )
           })}

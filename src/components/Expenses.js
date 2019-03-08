@@ -4,32 +4,11 @@ import * as expensesActions from '../actions/expensesActions';
 
 class Expenses extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      expenses: [
-        {
-          type: "Rent",
-          amount: 0
-        },
-        {
-          type: "Utilities",
-          amount: 0
-        },
-        {
-          type: "Entertainment",
-          amount: 0
-        },
-        {
-          type: "Groceries",
-          amount: 0
-        },
-        {
-          type: "Cable/Internet",
-          amount: 0
-        }
-      ],
+      expenses: this.props.expenses,
       message: '',
       // newExpense: {
       //   name: '',
@@ -73,8 +52,9 @@ class Expenses extends Component {
     //
   }
 
+  // componentDid
+
   render() {
-    console.log(this.state.expenses)
     return (
       <div className="">
         {this.state.expenses.map((exp,idx) => {
@@ -108,11 +88,14 @@ class Expenses extends Component {
     );
   }
 }
+//
+// function mapStateToProps(state, props) {
+//   console.log(state,props)
+//   return {
+//     expenses: state.expenses
+//   }
+// }
+//
+// export default connect(mapStateToProps, expensesActions)(Expenses);
 
-function mapStateToProps(state, props) {
-  return {
-    expenses: state.expenses
-  }
-}
-
-export default connect(mapStateToProps, expensesActions)(Expenses);
+export default Expenses

@@ -11,8 +11,33 @@ import Expenses from "./components/Expenses";
 import Profile from "./components/Profile";
 import Home from "./components/Home";
 
+const expenses = [
+  {
+    type: "Rent",
+    amount: 0
+  },
+  {
+    type: "Utilities",
+    amount: 0
+  },
+  {
+    type: "Entertainment",
+    amount: 0
+  },
+  {
+    type: "Groceries",
+    amount: 0
+  },
+  {
+    type: "Cable/Internet",
+    amount: 0
+  }
+]
+
 class App extends Component {
+
   render() {
+    console.log(expenses)
     return (
       <div className="App">
         <Router>
@@ -45,7 +70,7 @@ class App extends Component {
                 />
                 <Route path="/home" component={Home} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/expenses" component={Expenses} />
+                <Route path="/expenses" component={() => <Expenses expenses={expenses}/>} />
               </Switch>
             </div>
           </div>

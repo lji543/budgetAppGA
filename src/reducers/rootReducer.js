@@ -1,15 +1,11 @@
 import { combineReducers } from 'redux';
 
 import profile from './profileReducer';
-import expenses from './expenseReducer';
+import expenses from './expensesReducer';
 
 const rootReducer = combineReducers({
-  list
+  profile,
+  expenses
 });
 
 export default rootReducer;
-
-
-// Home
-// Profile
-// Expenses

@@ -74,7 +74,7 @@ class Expenses extends Component {
   render() {
     console.log(this.state.expenses)
     return (
-      <div className="">
+      <div className="container-expenses">
 
 
         {this.state.expenses.map((exp,idx) => {

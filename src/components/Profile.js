@@ -27,9 +27,6 @@ class Profile extends Component {
             value={this.state.name}
             onChange={ e => this.setState({name:e.target.value})}
           />
-          <input type="submit"
-            value="Update"
-          />
         </form>
 
         <h3>Update Your Budget</h3>
@@ -38,9 +35,7 @@ class Profile extends Component {
             value={this.state.budget}
             onChange={ e => this.setState({budget:e.target.value})}
           />
-          <input type="submit"
-            value="Update"
-          />
+
         </form>
 
       </div>

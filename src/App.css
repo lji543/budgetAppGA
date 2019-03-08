@@ -5,6 +5,9 @@ body {
   text-align: center;
 }
 
+
+/* Navigation */
+
 nav {
   min-height: 40px;
   padding-top: 15px;
@@ -68,3 +71,27 @@ nav a:visited {
 ul {
   text-align: left;
 }
+
+
+/* Input  */
+
+input {
+  height: 32px;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0);
+  border: solid 1px #d9d9d9;
+  background-color: #ffffff;
+}
+
+/* Flex Grid */
+
+.container-expenses {
+  display: flex; /* or inline-flex */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .children-expenses {
+
+} */

@@ -1,14 +1,9 @@
-export const addToCart = item => {
+export const updateProfile = (name, budget) => {
   // return action
   return {
-    type: 'ADD_ITEM', // type is required for all actions
-    item
+    type: 'UPDATE_PROFILE', // type is required for all actions
+    name,
+    budget
   }
 }
 
-export const removeFromCart = item => {
-  return {
-    type: 'REMOVE_ITEM', // type is required for all actions
-    item
-  }
-}

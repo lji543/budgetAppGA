@@ -1,14 +1,13 @@
-export const addToCart = item => {
-  // return action
+export const addExpense = expense => {
   return {
-    type: 'ADD_ITEM', // type is required for all actions
-    item
+    type: 'ADD_EXPENSE',
+    expense
   }
 }
 
-export const removeFromCart = item => {
+export const removeExpense = expense => {
   return {
-    type: 'REMOVE_ITEM', // type is required for all actions
-    item
+    type: 'REMOVE_EXPENSE',
+    expense
   }
 }

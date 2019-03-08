@@ -28,7 +28,7 @@ class App extends Component {
                   </li>
                   <li>
                     <Link to="/expenses">Expenses</Link>
-                    <span> ({Object.keys(this.props.cart).length})</span>
+                    {/* <span> ({Object.keys(this.props.cart).length})</span> */}
                   </li>
                 </ul>
               </nav>
